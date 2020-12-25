@@ -1,0 +1,41 @@
+<%- include ('partials/header.ejs') -%>
+
+<div class="login-box">
+  <div class="login-header">
+    <h1>Login</h1>
+  </div>
+  <div class="login-form">
+
+    <% if (typeof success !== 'undefined') { %>
+      <div class="msg-box success">
+        <%= success.msg %>
+        <div class="close-btn">
+          <span class="left-line"></span>
+          <span class="right-line"></span>
+        </div>
+      </div>
+    <% } %>
+
+    <% if (typeof err_msg !== 'undefined') { %>
+      <div class="msg-box error">
+        <%= err_msg %>
+        <div class="close-btn">
+          <span class="left-line"></span>
+          <span class="right-line"></span>
+        </div>
+      </div>
+    <% } %>
+
+    <form method="POST">
+      <input type="email" id="email" name="email" placeholder="Enter your email">
+      <input type="password" id="password" name="password" placeholder="Enter your password">
+      <button type="submit">LOGIN</button>
+    </form>
+  </div>
+  <div class="login-footer">
+    <span>Dont have an account?</span>
+    <a href="/user/register">Click here</a>
+  </div>
+</div>
+
+<%- include ('partials/footer') -%>

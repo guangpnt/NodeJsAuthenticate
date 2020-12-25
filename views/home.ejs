@@ -1,0 +1,26 @@
+<%- include ('partials/header.ejs') -%>
+
+<div class="home-box">
+
+    <% if (username != null) { %>
+    <div class="home-header">
+        <h1>Welcome</h1>
+    </div>
+    <div class="home-content">
+        <h2>Username : <%= username %></h2>
+        <h2>Email : <%= email %></h2>
+        <div class="home-content">
+            <a href="/user/logout">Loout</a>
+        </div>
+    </div>
+    <% } else { %>
+    <div class="home-header">
+        <h1>Welcome</h1>
+    </div>
+    <div class="home-content">
+        <a href="/user/login">Login</a>
+    </div>
+    <% } %>
+
+
+    <%- include ('partials/footer') -%>
